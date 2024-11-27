@@ -1,0 +1,28 @@
+.vscode
+
+# Folders to ignore for blueberry
+wandb/
+share/
+pyvenv.cfg
+lib/
+bin/
+
+# File Extensions:
+*.log
+*.pt
+*.weights
+*.pt
+*.onnx
+*.mlmodel
+*.torchscript
+*.jpg
+*.xml
+*.txt
+*.mp4
+*.png
+*.pth
+*.zip
+
+# other jetson specific  
+__pycache__/
+

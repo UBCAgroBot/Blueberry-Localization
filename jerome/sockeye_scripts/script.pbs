@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#PBS -l walltime=08:00:00,select=1:ncpus=4:mem=32gb,gpu_mem=32gb
+#PBS -N bluberries
+#PBS -A st-sielmann-1-gpu
+#PBS -m abe
+#PBS -M jeromejjcho@gmail.com
+#PBS -o model_training_output.txt
+#PBS -e model_training_error.txt
+
+module load conda
+
+cd /arc/project/st-sielmann-1/AppliedAI/24-M-14-FPR/jerome
+
+conda activate bluberries
+python __main__.py
