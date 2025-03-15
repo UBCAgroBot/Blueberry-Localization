@@ -13,7 +13,7 @@ from scripts.config.config import CLASS_CODES_MAP
 import cv2
 import numpy as np
 
-THRESHOLD = 0.5
+THRESHOLD = 0.0
 device = torch.device('cpu')
 num_classes = 3
 
@@ -42,6 +42,7 @@ with torch.inference_mode():
         predictions = model([x, ])
         pred = predictions[0]
         print(pred)
+
         # (image - image.min()) / (image.max() - image.min()) regularizies all 
         # values of the image to between 0 and 1 inclusive (max == 1, min == 0)
         # Multiplying by 255 gives us a newly generated image whose pixel values 
