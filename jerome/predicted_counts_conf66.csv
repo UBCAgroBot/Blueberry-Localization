@@ -1,0 +1,20 @@
+filename,ground_truth_count,predicted_count
+Image 10.jpg,27,15
+Image 11.jpg,12,31
+Image 12.jpg,11,18
+Image 15.jpg,7,20
+Image 16.jpg,41,31
+Image 18.jpg,6,24
+Image 2.jpg,10,38
+Image 21.jpg,7,14
+Image 24.jpg,20,22
+Image 26.jpg,6,18
+Image 28.jpg,15,16
+Image 33.jpg,26,24
+Image 36.jpg,6,13
+Image 4.jpg,31,26
+Image 40.jpg,14,22
+Image 41.jpg,5,11
+Image 5.jpg,23,25
+Image 6.jpg,37,16
+Image 9.jpg,30,17
