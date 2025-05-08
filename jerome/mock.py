@@ -12,16 +12,17 @@ from scripts.config.config import CLASS_CODES_MAP
 # Set device
 device = torch.device('cpu')
 num_classes = 3
-THRESHOLD = 0.5  # Confidence threshold for Faster R-CNN
+THRESHOLD = 0.3  # Lowered confidence threshold for Faster R-CNN
 
 # Load pre-trained Faster R-CNN model
+model_path = os.path.join(os.path.dirname(__file__), 'saved_models', 'model_frcnn_32.pth')
 model = frcnn.get_model(num_classes)
 model.to(device)
-model.load_state_dict(torch.load('saved_models/model_frcnn_32.pth', map_location=torch.device('cpu')))
+model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
 model.eval()
 
 # Load an image
-IMAGE_PATH = 'scripts/data/blueberries/test/sample.png'
+IMAGE_PATH = os.path.join(os.path.dirname(__file__), 'scripts', 'data', 'tempHolder', 'images.jpeg')
 image = read_image(IMAGE_PATH)
 image_np = cv2.imread(IMAGE_PATH)  # Load in OpenCV format for dimensions
 
@@ -63,6 +64,10 @@ for i, box in enumerate(mock_boxes):
         x = x[:3, ...].to(device)
         predictions = model([x, ])
         pred = predictions[0]
+
+        # Log predictions
+        print(f"Predictions for Mock Bush {i+1}:")
+        print(pred)
 
         # Apply thresholding
         pred_boxes = pred["boxes"].long()

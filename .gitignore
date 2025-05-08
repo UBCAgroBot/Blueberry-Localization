@@ -21,6 +21,9 @@ bin/
 *.png
 *.pth
 *.zip
+*.txt
+*.tsv
+*.tfevents
 
 # other jetson specific  
 __pycache__/
